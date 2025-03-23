@@ -1,0 +1,17 @@
+{
+    "regions": [
+        "peru",
+        "colombia",
+        "india",
+        "singapore",
+        "malaysia",
+        "cambodia",
+        "indonesia",
+        "vietnam"
+    ],
+    "sort_order": {
+        "dep_time": "dep_time_sort",
+        "sort_by_lowest_price": "sort_by_lowest_price"
+    },
+    "LIBRARY_NAME": "ChainApi"
+}

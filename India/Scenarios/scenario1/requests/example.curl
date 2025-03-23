@@ -1,0 +1,7 @@
+curl -X POST "https://jsonplaceholder.typicode.com/posts" \
+     -H "Content-Type: application/json" \
+     -d '{
+         "title": "Test Title",
+         "body": "This is a test body.",
+         "userId": 1
+     }'

@@ -1,0 +1,4 @@
+{
+    "moduleB": "/api/Data/v2/Air/{airId}/2025-03-23/{airTrackId}",
+    "moduleD": "/api/Payment/v1/{uuid}"
+}

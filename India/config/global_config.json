@@ -1,0 +1,78 @@
+{
+    "moduleA": {
+        "store": {
+            "dataStorage": {
+                "json_paths": {
+                    "key1": "$.dataList[*].key1",
+                    "key2": "$.dataList[*].key2"
+                }
+            }
+        }
+    },
+    "moduleB": {
+        "replace": {
+            "update_values": {
+                "json_paths": {
+                    "valA": "$.records[*].items[*].valueA",
+                    "valB": "$.records[*].items[*].valueB"
+                }
+            },
+            "condition": [
+                {
+                    "flag_path": "$.records[*].items[*].status",
+                    "expected_values": [
+                        true
+                    ]
+                }
+            ],
+            "multi_select": true
+        },
+        "store": {
+            "metadata": {
+                "json_paths": {
+                    "idStart": "$.sourceId",
+                    "idEnd": "$.destinationId"
+                }
+            }
+        }
+    },
+    "moduleC": {
+        "replace": {
+            "update_mapping": {
+                "json_paths": {
+                    "currency": "entries[*].details.currency"
+                }
+            },
+            "transaction_update": {
+                "json_paths": {
+                    "startId": "entries[*].details.transaction.startPoint",
+                    "endId": "entries[*].details.transaction.endPoint",
+                    "route": "entries[*].details.transaction.routeId",
+                    "operator": "entries[*].details.transaction.operatorId"
+                }
+            },
+            "location": [
+                "payload"
+            ]
+        },
+        "store": {
+            "orderInfo": {
+                "json_paths": {
+                    "orderId": "$.orderUUID"
+                }
+            }
+        }
+    },
+    "moduleD": {
+        "replace": {
+            "uuidMapping": {
+                "json_paths": {
+                    "uuid": "$.transactionId"
+                }
+            },
+            "location": [
+                "query_params"
+            ]
+        }
+    }
+}
